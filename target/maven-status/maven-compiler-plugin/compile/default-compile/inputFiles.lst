@@ -1,0 +1,13 @@
+B:\turkcell\tcell-microservices-core-main\src\main\java\com\turkcell\pair3\core\App.java
+B:\turkcell\tcell-microservices-core-main\src\main\java\com\turkcell\pair3\core\configuration\BaseSecurityService.java
+B:\turkcell\tcell-microservices-core-main\src\main\java\com\turkcell\pair3\core\entities\User.java
+B:\turkcell\tcell-microservices-core-main\src\main\java\com\turkcell\pair3\core\annotations\EnableSecurity.java
+B:\turkcell\tcell-microservices-core-main\src\main\java\com\turkcell\pair3\core\services\dtos\requests\RegisterRequest.java
+B:\turkcell\tcell-microservices-core-main\src\main\java\com\turkcell\pair3\core\filters\JwtAuthFilter.java
+B:\turkcell\tcell-microservices-core-main\src\main\java\com\turkcell\pair3\core\services\concretes\UserServiceImpl.java
+B:\turkcell\tcell-microservices-core-main\src\main\java\com\turkcell\pair3\core\configuration\BaseSecurityConfiguration.java
+B:\turkcell\tcell-microservices-core-main\src\main\java\com\turkcell\pair3\core\repositories\UserRepository.java
+B:\turkcell\tcell-microservices-core-main\src\main\java\com\turkcell\pair3\core\jwt\JwtService.java
+B:\turkcell\tcell-microservices-core-main\src\main\java\com\turkcell\pair3\core\services\abstracts\UserService.java
+B:\turkcell\tcell-microservices-core-main\src\main\java\com\turkcell\pair3\core\configuration\BaseApplicationConfiguration.java
+B:\turkcell\tcell-microservices-core-main\src\main\java\com\turkcell\pair3\core\entities\Role.java
