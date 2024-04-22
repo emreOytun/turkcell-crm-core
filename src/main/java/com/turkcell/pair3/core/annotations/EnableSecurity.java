@@ -11,9 +11,9 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
-@ComponentScan(basePackages = {"com.halitkalayci"})
-@EntityScan(basePackages = {"com.halitkalayci.entities"})
-@EnableJpaRepositories(basePackages = {"com.halitkalayci.repositories"})
+@ComponentScan(basePackages = {"com.turkcell.pair3.core"})
+@EntityScan(basePackages = {"com.turkcell.pair3.core.entities"})
+@EnableJpaRepositories(basePackages = {"com.turkcell.pair3.core.repositories"})
 public @interface EnableSecurity {
 
 }
