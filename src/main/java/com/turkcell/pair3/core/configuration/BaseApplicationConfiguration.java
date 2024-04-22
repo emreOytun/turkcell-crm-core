@@ -7,8 +7,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
-@ComponentScan(basePackages = {"com.turkcell.pair3.core.services"})
-@ComponentScan(basePackages = {"com.turkcell.pair3.core.repositories"})
 public class BaseApplicationConfiguration {
     @Bean
     public PasswordEncoder passwordEncoder()
