@@ -15,7 +15,8 @@ public class BaseSecurityService {
             "/v2/api-docs",
             "/v3/api-docs",
             "/v3/api-docs/**",
-            "/api/v1/auth/**"
+            "/api/v1/auth/**",
+            "/api/addresses/**",
     };
     private final JwtAuthFilter jwtAuthFilter;
 
