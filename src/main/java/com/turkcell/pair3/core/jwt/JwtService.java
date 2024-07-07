@@ -1,11 +1,11 @@
 package com.turkcell.pair3.core.jwt;
 
 import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.security.Key;
@@ -16,8 +16,12 @@ import java.util.Map;
 
 @Service
 public class JwtService {
-    private static final String SECRET_KEY = "12023660c1601aaada3da96a4a80612e291ec33b28f60b58191f8b2845eb237bc978efb4d339d0b09f285cda79c5d67eef4458d6cefbd592ac663c783d1a64ee";
-    private static final long EXPIRATION = 600000;
+
+    @Value("${jwt.secret-key}")
+    private String SECRET_KEY;
+
+    @Value("${jwt.expiration}")
+    private long EXPIRATION;
 
     public String generateToken(String userName, List<String> roles) {
         Map<String, Object> claims = new HashMap<>();
