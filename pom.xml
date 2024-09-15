@@ -84,14 +84,6 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-log4j2</artifactId>
     </dependency>
-
-    <!-- Exclude default logging (Logback) if it's still included -->
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-logging</artifactId>
-      <scope>provided</scope>
-    </dependency>
-
   </dependencies>
 
   <distributionManagement>
