@@ -1,8 +1,11 @@
 package com.turkcell.pair3.core.exception.handlers;
 
 import com.turkcell.pair3.core.exception.details.BusinessProblemDetails;
+import com.turkcell.pair3.core.exception.details.InternalProblemDetails;
 import com.turkcell.pair3.core.exception.details.ValidationProblemDetails;
+import com.turkcell.pair3.core.exception.details.factories.ExceptionFactory;
 import com.turkcell.pair3.core.exception.types.BusinessException;
+import feign.FeignException;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import org.springframework.http.HttpStatus;
@@ -17,16 +20,24 @@ public class BaseGlobalExceptionHandler
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public BusinessProblemDetails handleBusinessException(BusinessException businessException)
     {
-        BusinessProblemDetails problemDetails = new BusinessProblemDetails();
-        problemDetails.setDetail(businessException.getMessage());
-        return problemDetails;
+        return ExceptionFactory.businessProblemDetails(businessException.getMessage());
     }
 
     @ExceptionHandler({MethodArgumentNotValidException.class})
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ValidationProblemDetails handleValidationException(MethodArgumentNotValidException methodArgumentNotValidException) {
-        ValidationProblemDetails validationError = new ValidationProblemDetails();
-        validationError.setDetail(methodArgumentNotValidException.getMessage());
-        return validationError;
+        return ExceptionFactory.validationProblemDetails(methodArgumentNotValidException.getMessage());
+    }
+
+    @ExceptionHandler(FeignException.ServiceUnavailable.class)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    public InternalProblemDetails handleFeignServiceUnavailable(FeignException.ServiceUnavailable ex) {
+        return ExceptionFactory.internalProblemDetails();
+    }
+
+    @ExceptionHandler(FeignException.class)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    public InternalProblemDetails handleFeignException(FeignException ex) {
+        return ExceptionFactory.internalProblemDetails();
     }
 }
