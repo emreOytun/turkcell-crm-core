@@ -40,7 +40,7 @@ public class ExceptionFactory {
         return validationProblemDetails;
     }
 
-    public static AccessDeniedException createWithMessage(String message) {
+    public static AccessDeniedException accessDeniedException(String message) {
         return new AccessDeniedException(message);
     }
 }
